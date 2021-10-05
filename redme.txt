@@ -1,0 +1,29 @@
+Despues de inicializar npm, instalar el jest con el comando (para hacerlo de manera local al proyecto):
+
+    $ npm install --save-dev jest 
+
+modificar en el apartado "scripts" del package.json la parte "test" de forma que quede "test":"jest",
+
+Para poder ejecutar las pruebas usando la sintaxis que hemos manejado en el front-end
+es decir "export ..." y la funcion "import {} from ..." es necesario agregar en el package.json
+la instrucción  "type":"module", (puede ser abajo de "name").
+
+En caso contrario es necesario usar la sintaxis de node.js [entorno de ejecucion para JavaScript de 
+lado del backend] "declarar y exportar al final" para importar se declaran como const (o var) y se usar 
+el require{ruta del archivo}
+
+adicionalamente al comando agregado arriba esta sintaxis necesita un comando especial por terminal 
+pues se trata de una funcion experimental para estas pruebas usar el comando 
+
+    $ node --experimental-vm-modules node_modules/jest/bin/jest.js
+
+y con esto es las prubas seran ejecutadas
+
+si deseamos que el comando se mantenga en ejecucion agragarle un --watchAll al final y realizará las pruebas 
+cuando realizamos alguna modificacion
+
+si ejecutamos las pruebas con la sitaxis de node.js el comando para ejecutar las pruebas por terminal se reduce a 
+
+    $ npm run test
+
+Cosas adicionales ir a la documentacion 
